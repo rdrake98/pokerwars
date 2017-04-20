@@ -5,5 +5,11 @@ defmodule Pokerwars.Hand do
     evaluate(cards)
   end
 
-  defp evaluate(_), do: :high_card
+  defp evaluate(cards) do
+    IO.puts hd(cards).rank
+    case hd(cards).rank do
+      10 -> :royal_flush
+      _ -> :high_card
+    end
+  end
 end
